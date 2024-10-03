@@ -10,3 +10,5 @@ We also provide a [conventional pdf documentation](https://github.com/rethomics/
 
 
 ORIGINAL REPOSITORY: https://rethomics.github.io/
+
+Adding additional details in error messages to allow for easier troubleshooting when checking back with the raw data.
