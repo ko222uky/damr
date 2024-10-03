@@ -69,7 +69,8 @@ find_dam_first_last_lines <- function(file,
     stop(paste("Time has jumped for an hour or more at indices:", paste(problematic_indices, collapse = ", "),
                "\nNo valid data during this time.",
                "\nPossibly, device was disconnected or maybe a change from summer to winter time"))
-
+  }
+  
   ## irregular time stamps, possible missing reads
   n_sampling_periods <- length(sampling_periods)
 
