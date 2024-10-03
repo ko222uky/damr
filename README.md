@@ -13,5 +13,5 @@ We also provide a [conventional pdf documentation](https://github.com/rethomics/
 
 ```r
 library(devtools)
-install_github("rethomics/damr")
+install_github("ko222/damr")
 ```
