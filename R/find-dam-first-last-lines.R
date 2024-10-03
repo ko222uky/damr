@@ -70,7 +70,7 @@ find_dam_first_last_lines <- function(file,
     problematic_datetimes <- datetimes_dt$datetime[problematic_indices]
     
     # Stop execution and return the problematic indices and date-times, so the user can troubleshoot
-    stop(paste("Time has jumped for an hour or more at indices:", paste(problematic_indices, collapse = ", "),
+    stop(paste("WARNING: Time has jumped for an hour or more at indices:", paste(problematic_indices, collapse = ", "),
                "\nProblematic date-times:", paste(problematic_datetimes, collapse = ", "),
                "\nNo valid data during this time.",
                "\nPossibly, device was disconnected or maybe a change from summer to winter time"))
