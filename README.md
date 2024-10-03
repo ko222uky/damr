@@ -9,9 +9,4 @@ A comprehensive tutorial is available on the [rethomics webpage](https://rethomi
 We also provide a [conventional pdf documentation](https://github.com/rethomics/damr/raw/master/damr.pdf).
 
 
-## Installation
 
-```r
-library(devtools)
-install_github("ko222/damr")
-```
