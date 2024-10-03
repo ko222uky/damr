@@ -62,11 +62,16 @@ find_dam_first_last_lines <- function(file,
   sampling_periods <- unique(na.omit(unique(datetimes_dt, by = "read_id")$diff_t))
   # Check if any sampling period is greater than or equal to 3600 seconds (1 hour)
   if(any(abs(sampling_periods) >= 3600)) {
-    # Find the indices where the problem occurs
+    
+    # Find the indices where the problem occurs, to allow troubleshooting
     problematic_indices <- which(abs(datetimes_dt$diff_t) >= 3600)
   
-    # Stop execution and return the problematic indices
+    # Extract the specific date-times that cause the issue
+    problematic_datetimes <- datetimes_dt$datetime[problematic_indices]
+    
+    # Stop execution and return the problematic indices and date-times, so the user can troubleshoot
     stop(paste("Time has jumped for an hour or more at indices:", paste(problematic_indices, collapse = ", "),
+               "\nProblematic date-times:", paste(problematic_datetimes, collapse = ", "),
                "\nNo valid data during this time.",
                "\nPossibly, device was disconnected or maybe a change from summer to winter time"))
   }
